@@ -1,5 +1,7 @@
 const products = document.getElementById("supermarket");
-console.log(products);
+const button = document.getElementsByTagName("button")[0];
+const counter = document.getElementById("timer");
+console.log(button);
 
 // Event Listeners
 products.addEventListener("mouseover", (event) => {
@@ -14,4 +16,18 @@ products.addEventListener("mouseout", (event) => {
 		event.target.style.backgroundColor = "";
 		event.target.style.color = "black";
 	}
+});
+
+button.addEventListener("click", () => {
+	let seconds = 30;
+
+	console.log(counter);
+	counter.innerText = seconds;
+
+	// while (seconds >= 0) {
+	// 	setInterval(function () {
+	// 		seconds--;
+	// 		counter.innerText = seconds;
+	// 	}, 1000);
+	// }
 });
