@@ -1,7 +1,24 @@
 const products = document.getElementById("supermarket");
 const button = document.getElementsByTagName("button")[0];
 const counter = document.getElementById("timer");
-console.log(button);
+
+function interval(deadline) {
+	setInterval(function () {
+		const now = new Date().getTime() / 1000;
+		let time = deadline - now;
+		counter.innerHTML = Math.floor(time);
+		if (time < 0) {
+			counter.innerHTML = "DONE";
+			clearInterval(interval);
+		}
+	}, 1000);
+}
+
+function timer() {
+	counter.innerHTML = "";
+	const deadline = new Date().getTime() / 1000 + 12;
+	interval(deadline);
+}
 
 // Event Listeners
 products.addEventListener("mouseover", (event) => {
@@ -19,15 +36,7 @@ products.addEventListener("mouseout", (event) => {
 });
 
 button.addEventListener("click", () => {
-	let seconds = 30;
-
-	console.log(counter);
-	counter.innerText = seconds;
-
-	// while (seconds >= 0) {
-	// 	setInterval(function () {
-	// 		seconds--;
-	// 		counter.innerText = seconds;
-	// 	}, 1000);
-	// }
+	timer();
 });
+
+products.addEventListener("click", () => {});
