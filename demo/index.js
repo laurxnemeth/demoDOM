@@ -1,11 +1,9 @@
-// 10 Second Timer Functions
-
+// 10 Second Timer Function
 function timer() {
 	let timeleft = 5;
 	let counterTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(counterTimer);
-			whoseTurn = players[1];
 		}
 		counter.innerText = timeleft;
 		timeleft -= 1;
