@@ -39,7 +39,6 @@ products.addEventListener("mouseout", (event) => {
 });
 
 products.addEventListener("click", (event) => {
-	console.log(whoseTurn);
 	let listItem = document.createElement("LI");
 	listItem.innerText = event.target.innerText;
 	whoseTurn.lastElementChild.appendChild(listItem);
