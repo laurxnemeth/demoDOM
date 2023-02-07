@@ -10,7 +10,6 @@ function timer() {
 	let counterTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(counterTimer);
-			// whoseTurn = players[1];
 			if (whoseTurn === players[0]) {
 				whoseTurn = players[1];
 				console.log(whoseTurn);
